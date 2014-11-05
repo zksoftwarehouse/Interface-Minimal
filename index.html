@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <title>ZK Software</title>
+	
+    <!-- JS  -->
+    <script src="js/jquery-2.1.1.js"></script>
+    <script src="js/main.js"></script> 
+    <script src="js/dropzone.js"></script>    
+    <script src="js/runFile.js"></script>
+    
+	<!-- CSS -->
+	<link href="css/style.css" rel="stylesheet">
+	
+</head>
+
+<body>
+	<img id="logo" src="assets/image/logo.png"/>
+	
+	<div id="container-geral">
+		<div id="drop-original">Solte os arquivos aqui para compactar!</div>
+		<div id="drop-reverse">Solte os arquivos aqui para criptografar!</div>
+	</div>
+	
+    <!--
+     <div class="row"><ul id="addressbar" class="breadcrumb"></ul></div><br>
+      <div id="divNavegador">
+        <div >
+            <ul id="files"></ul>
+        </div>
+      </div>
+    -->
+
+    <form action="/file-upload" class="dropzone">
+        <div class="fallback">
+            <input name="file" type="file" multiple />
+        </div>
+    </form>
+
+	<img id="options" src="assets/icons/btn_options.png" 
+        onclick="run('/home/natan/Documentos/zk/Interface-Minimal/Files/arquivo.c')">
+    </img>
+
+</body>
+
+</html>
