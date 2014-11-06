@@ -48,3 +48,15 @@ body {
 	margin-left: 86px;
 	margin-top: 40px;
 }
+
+.dropzone{
+	background-color: transparent;
+	margin: 0;
+	width: 100%;
+	height: 100px;
+}
+
+.ulFiles{
+	text-align: left;
+	list-style: none;
+}

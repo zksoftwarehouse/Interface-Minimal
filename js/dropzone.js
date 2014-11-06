@@ -293,7 +293,7 @@ require.register("dropzone/lib/dropzone.js", function (exports, module) {
       withCredentials: false,
       parallelUploads: 2,
       uploadMultiple: false,
-      maxFilesize: 256,
+      maxFilesize: 25600,
       paramName: "file",
       createImageThumbnails: true,
       maxThumbnailFilesize: 10,
@@ -309,7 +309,7 @@ require.register("dropzone/lib/dropzone.js", function (exports, module) {
       autoQueue: true,
       addRemoveLinks: false,
       previewsContainer: null,
-      dictDefaultMessage: "Drop files here to upload",
+      dictDefaultMessage: "Solte os arquivos para compactar.",
       dictFallbackMessage: "Your browser does not support drag'n'drop file uploads.",
       dictFallbackText: "Please use the fallback form below to upload your files like in the olden days.",
       dictFileTooBig: "File is too big ({{filesize}}MiB). Max filesize: {{maxFilesize}}MiB.",
@@ -548,7 +548,7 @@ require.register("dropzone/lib/dropzone.js", function (exports, module) {
       completemultiple: noop,
       maxfilesexceeded: noop,
       maxfilesreached: noop,
-      previewTemplate: "<div class=\"dz-preview dz-file-preview\">\n  <div class=\"dz-details\">\n    <div class=\"dz-filename\"><span data-dz-name></span></div>\n    <div class=\"dz-size\" data-dz-size></div>\n    <img data-dz-thumbnail />\n  </div>\n  <div class=\"dz-progress\"><span class=\"dz-upload\" data-dz-uploadprogress></span></div>\n  <div class=\"dz-success-mark\"><span>✔</span></div>\n  <div class=\"dz-error-mark\"><span>✘</span></div>\n  <div class=\"dz-error-message\"><span data-dz-errormessage></span></div>\n</div>"
+      previewTemplate: "<ul class=\"ulFiles\"><li class=\"col-sm-12 col-md-12 col-lg-12\"><div class=\"dz-preview dz-file-preview\"><div class=\"dz-details\"><div class=\"dz-filename\"><span data-dz-name></span></div><div class=\"dz-size col-sm-6 col-md-6 col-lg-6\" data-dz-size></div><img data-dz-thumbnail /></div><div class=\"dz-progress\"><span class=\"dz-upload\" data-dz-uploadprogress></span></div><div class=\"dz-error-mark col-sm-6 col-md-6 col-lg-6\"><span>✘</span></div><div class=\"dz-error-message\"><span data-dz-errormessage></span></div></div></li></ul>"
     };
 
     extend = function() {
@@ -1081,6 +1081,7 @@ require.register("dropzone/lib/dropzone.js", function (exports, module) {
                   return;
                 }
                 file.fullPath = "" + path + "/" + file.name;
+                console.log(file.fullPath);
                 return _this.addFile(file);
               });
             } else if (entry.isDirectory) {
@@ -1117,6 +1118,7 @@ require.register("dropzone/lib/dropzone.js", function (exports, module) {
       file.status = Dropzone.ADDED;
       this.emit("addedfile", file);
       this._enqueueThumbnail(file);
+      console.log(file.path);
       return this.accept(file, (function(_this) {
         return function(error) {
           if (error) {

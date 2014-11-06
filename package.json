@@ -2,7 +2,7 @@
   "name": "ZK Software",
   "description": "Compression and encryption tool powered by ZK technology.",
   "version": "0.1",
-  "main": "app/index.html",
+  "main": "index.html",
   "window": 
   {
     "toolbar": false,

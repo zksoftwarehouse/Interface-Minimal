@@ -9,19 +9,30 @@
     <script src="js/main.js"></script> 
     <script src="js/dropzone.js"></script>    
     <script src="js/runFile.js"></script>
+    <script src="css/Bootstrap/dist/js/bootstrap.min.js"></script> 
     
 	<!-- CSS -->
 	<link href="css/style.css" rel="stylesheet">
+    <link href="css/Bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
 	
 </head>
 
 <body>
 	<img id="logo" src="assets/image/logo.png"/>
 	
-	<div id="container-geral">
-		<div id="drop-original">Solte os arquivos aqui para compactar!</div>
-		<div id="drop-reverse">Solte os arquivos aqui para criptografar!</div>
-	</div>
+   <div id="container-geral" >    
+   		<div id="drop-original"> <!-- Primeira opcao -->
+            <form action="/file-upload" class="dropzone" >
+                <div class="fallback">
+                    <input name="file" type="file" multiple />
+                </div>
+            </form>
+        </div>
+       	<div id="drop-reverse"> <!--  Segunda opcao  -->
+            Solte os arquivos aqui para criptografar!
+        </div>
+   </div>
+    
 	
     <!--
      <div class="row"><ul id="addressbar" class="breadcrumb"></ul></div><br>
@@ -30,13 +41,12 @@
             <ul id="files"></ul>
         </div>
       </div>
-    -->
 
     <form action="/file-upload" class="dropzone">
         <div class="fallback">
             <input name="file" type="file" multiple />
         </div>
-    </form>
+    </form>-->
 
 	<img id="options" src="assets/icons/btn_options.png" 
         onclick="run('/home/natan/Documentos/zk/Interface-Minimal/Files/arquivo.c')">

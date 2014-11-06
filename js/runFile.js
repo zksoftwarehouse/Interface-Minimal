@@ -13,13 +13,13 @@ function run_cmd(cmd, args, cb, end) {
     child.on('exit', function (code) {
         var cod = code;
 
-        console.log('child process exited with code ' + cod);
+        console.log('CODIGO RETURN: ' + cod);
     });
 }
 
 function run(str){
     var foo = new run_cmd(
-        './Files/helloworld', [str],
+        'ls', ["-l"],
 
         function (me, buffer) { 
             me.stdout += buffer.toString() 
