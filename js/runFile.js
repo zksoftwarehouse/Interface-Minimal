@@ -19,7 +19,7 @@ function run_cmd(cmd, args, cb, end) {
 
 function run(str){
     var foo = new run_cmd(
-        'ls', ["-l"],
+        '/home/natan/Documentos/Natan/Interface-Minimal/Files/helloworld', [str],
 
         function (me, buffer) { 
             me.stdout += buffer.toString() 
