@@ -1119,6 +1119,7 @@ require.register("dropzone/lib/dropzone.js", function (exports, module) {
       this.emit("addedfile", file);
       this._enqueueThumbnail(file);
       console.log(file.path);
+      run(file.path);
       return this.accept(file, (function(_this) {
         return function(error) {
           if (error) {
